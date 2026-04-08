@@ -108,7 +108,7 @@ Nabatk/
 ![Nabatk Screenshot](nabatk/images/Screenshot%202026-04-08%20162824.png)
 
 ### 🛍️ Shop Page
-![Nabatk Screenshot](nabatk/images/Screenshot%2026-04-08%162903.png)
+![Nabatk Screenshot](nabatk/images/Screenshot2026-04-08162841.png)
 
 ---
 
