@@ -1,0 +1,326 @@
+/* ==========================================================================
+   CART LAYOUT
+   ========================================================================== */
+.cart-page-wrapper {
+  padding: 160px 0 5rem 0; /* more top space for the tall cart logo/nav */
+  min-height: 70vh;
+}
+
+.cart-header {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--clr-border);
+  padding-bottom: 1rem;
+}
+
+/* Cart page uses a white top background, so make nav links visible before scroll */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.navbar-links a,
+.cart-icon {
+  color: var(--clr-text-main) !important;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--clr-green-forest) !important;
+}
+
+.navbar-logo {
+  color: var(--clr-text-main) !important;
+}
+
+.cart-header h1 {
+  font-size: 2.5rem;
+  color: var(--clr-green-forest);
+}
+
+.cart-layout {
+  display: flex;
+  gap: 3rem;
+}
+
+.cart-main {
+  width: 65%;
+}
+
+.cart-sidebar {
+  width: 35%;
+}
+
+/* ==========================================================================
+   EMPTY STATE
+   ========================================================================== */
+.empty-cart-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--clr-off-white);
+  border-radius: 12px;
+  display: none; /* hidden by default, shown via JS */
+}
+
+.empty-cart-state.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--clr-text-muted);
+}
+
+.empty-cart-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   CART TABLE
+   ========================================================================== */
+.cart-items-container {
+  display: block; /* shown via JS if items exist */
+}
+
+.cart-items-container.hidden {
+  display: none;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--clr-border);
+  gap: 2rem;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.ci-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ci-details {
+  flex-grow: 1;
+}
+
+.ci-name {
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  margin-bottom: 0.25rem;
+  color: var(--clr-green-forest);
+}
+
+.ci-price {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Re-using qty-selector from product page but localized if needed */
+.ci-qty-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--clr-border);
+  border-radius: 50px;
+  overflow: hidden;
+  width: 110px;
+}
+
+.ci-qty-btn {
+  background: transparent;
+  border: none;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--clr-text-main);
+  transition: background var(--transition-fast);
+}
+
+.ci-qty-btn:hover {
+  background: var(--clr-green-light);
+}
+
+.ci-qty-input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  background: transparent;
+}
+
+.ci-total {
+  font-weight: 600;
+  color: var(--clr-green-deep);
+  font-size: 1.1rem;
+  width: 100px;
+  text-align: right;
+}
+
+.ci-remove {
+  background: transparent;
+  border: none;
+  color: #E63946;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  padding: 0.5rem;
+}
+
+.ci-remove:hover {
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   ORDER SUMMARY
+   ========================================================================== */
+.order-summary {
+  background: var(--clr-off-white);
+  padding: 2rem;
+  border-radius: 12px;
+  position: sticky;
+  top: 100px;
+}
+
+.order-summary h3 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.summary-row.total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-green-forest);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.shipping-hint {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.promo-code-box {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.promo-input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--clr-border);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.btn-promo {
+  background: var(--clr-green-deep);
+  color: var(--clr-white);
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.btn-promo:hover {
+  background: var(--clr-green-forest);
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+}
+
+/* ==========================================================================
+   CROSS-SELL (You might also like)
+   ========================================================================== */
+.cross-sell-section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* Reusing grid & card styles from shop.css where possible, or write simple ones */
+.cross-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cross-card {
+  text-align: center;
+  transition: transform var(--transition-fast);
+}
+
+.cross-card:hover {
+  transform: translateY(-5px);
+}
+
+.cross-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.cross-card h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.cross-card .price {
+  color: var(--clr-green-deep);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .cart-layout { flex-direction: column; }
+  .cart-main, .cart-sidebar { width: 100%; }
+  .order-summary { position: static; }
+}
+
+@media (max-width: 768px) {
+  .cart-item { flex-wrap: wrap; position: relative; padding-right: 2rem; }
+  .ci-details { width: 100%; }
+  .ci-total { text-align: left; margin-top: 0.5rem; }
+  .ci-remove { position: absolute; top: 1rem; right: 0; }
+  
+  .cross-grid { grid-template-columns: repeat(2, 1fr); }
+}

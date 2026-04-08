@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Nabatk</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="marquee-bar">
+    <div class="marquee-content">
+      🌸 Free delivery in Cairo &nbsp;|&nbsp; 🌿 Fresh plants every week &nbsp;|&nbsp; 🌺 Gift wrapping available &nbsp;|&nbsp; 💚 100% natural &nbsp;|&nbsp;
+    </div>
+    <div class="marquee-content">
+      🌸 Free delivery in Cairo &nbsp;|&nbsp; 🌿 Fresh plants every week &nbsp;|&nbsp; 🌺 Gift wrapping available &nbsp;|&nbsp; 💚 100% natural &nbsp;|&nbsp;
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="Logo/flowerStore_Logo-removebg-preview.png" alt="Nabatk Logo" class="brand-logo">
+        <span class="navbar-brand-text">Nabatk</span>
+      </a>
+      
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="cart.html" class="cart-icon">
+          <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CART SECTION -->
+  <section class="section cart-page-wrapper">
+    <div class="container fade-up">
+      
+      <div class="cart-header">
+        <h1>Your Cart</h1>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-cart-state" id="emptyCartState">
+        <div class="empty-icon">🛒</div>
+        <h3>Your cart is currently empty</h3>
+        <p style="color: var(--clr-text-muted); margin-bottom: 2rem;">Looks like you haven't added any green friends yet.</p>
+        <a href="shop.html" class="btn btn-primary">Return to Shop</a>
+      </div>
+
+      <!-- MAIN CART LAYOUT -->
+      <div class="cart-layout hidden" id="cartItemsContainer">
+        
+        <!-- Left: Items -->
+        <main class="cart-main">
+          <!-- Dynamic Items inserted here -->
+          <div id="cartItemList"></div>
+
+          <!-- Promo Code -->
+          <form class="promo-code-box" id="promoForm">
+            <input type="text" class="promo-input" placeholder="Enter Promo Code (e.g., NABATK10)" required>
+            <button type="submit" class="btn-promo">Apply</button>
+          </form>
+        </main>
+
+        <!-- Right: Order Summary -->
+        <aside class="cart-sidebar">
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">EGP 0</span>
+            </div>
+            
+            <div class="summary-row" style="margin-bottom: 0.5rem;">
+              <span>Shipping</span>
+              <span id="cartShipping">EGP 50</span>
+            </div>
+            <div class="shipping-hint" id="shippingHint">Add EGP 1000 for free shipping</div>
+            
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="cartTotal">EGP 0</span>
+            </div>
+
+            <a href="checkout.html" class="btn btn-primary btn-checkout">Proceed to Checkout</a>
+            
+            <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--clr-text-muted);">
+              🔒 Safe and secure checkout
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- CROSS SELL SECTION -->
+      <div class="cross-sell-section fade-up">
+        <h2>You might also like</h2>
+        <div class="cross-grid">
+          
+          <div class="cross-card">
+            <a href="product.html">
+              <img src="https://source.unsplash.com/400x400/?monstera,plant" alt="Monstera Deliciosa">
+              <h4>Monstera Deliciosa</h4>
+            </a>
+            <div class="price">EGP 300</div>
+            <button class="btn btn-outline" style="width:100%; border-color: var(--clr-green-deep); color: var(--clr-green-deep); font-size: 0.9rem; padding: 0.5rem;" onclick="addToCart({id:3, name:'Monstera Deliciosa', price:300, image:'https://source.unsplash.com/400x400/?monstera,plant', quantity:1})">Add to Cart</button>
+          </div>
+          
+          <div class="cross-card">
+            <a href="product.html">
+              <img src="https://source.unsplash.com/400x400/?aloe,vera" alt="Aloe Vera">
+              <h4>Aloe Vera Pot</h4>
+            </a>
+            <div class="price">EGP 80</div>
+            <button class="btn btn-outline" style="width:100%; border-color: var(--clr-green-deep); color: var(--clr-green-deep); font-size: 0.9rem; padding: 0.5rem;" onclick="addToCart({id:4, name:'Aloe Vera Pot', price:80, image:'https://source.unsplash.com/400x400/?aloe,vera', quantity:1})">Add to Cart</button>
+          </div>
+          
+          <div class="cross-card">
+            <a href="product.html">
+              <img src="https://source.unsplash.com/400x400/?ficus,tree" alt="Ficus Lyrata">
+              <h4>Ficus Lyrata</h4>
+            </a>
+            <div class="price">EGP 450</div>
+            <button class="btn btn-outline" style="width:100%; border-color: var(--clr-green-deep); color: var(--clr-green-deep); font-size: 0.9rem; padding: 0.5rem;" onclick="addToCart({id:5, name:'Ficus Lyrata', price:450, image:'https://source.unsplash.com/400x400/?ficus,tree', quantity:1})">Add to Cart</button>
+          </div>
+          
+          <div class="cross-card">
+            <a href="product.html">
+              <img src="https://source.unsplash.com/400x400/?ceramic,pot" alt="Ceramic Pot">
+              <h4>Minimalist Ceramic Pot</h4>
+            </a>
+            <div class="price">EGP 120</div>
+            <button class="btn btn-outline" style="width:100%; border-color: var(--clr-green-deep); color: var(--clr-green-deep); font-size: 0.9rem; padding: 0.5rem;" onclick="addToCart({id:6, name:'Ceramic Pot', price:120, image:'https://source.unsplash.com/400x400/?ceramic,pot', quantity:1})">Add to Cart</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
