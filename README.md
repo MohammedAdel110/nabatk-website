@@ -6,12 +6,6 @@ Designed with a modern Green & White aesthetic, smooth animations, and a premium
 
 ---
 
-## ✨ Live Preview
-
-👉 *(Add your GitHub Pages link here)*
-
----
-
 ## 🎯 Project Overview
 
 **Nabatk (نباتك)** is a complete front-end UI system for an online plant & flower store, including:
