@@ -1,4 +1,4 @@
-# 🌿 Nabatk — Modern Flower & Plant E-Commerce UI
+<img width="303" height="560" alt="image" src="https://github.com/user-attachments/assets/d4919ebb-6ea4-4fd3-a182-4345b3b5b147" /># 🌿 Nabatk — Modern Flower & Plant E-Commerce UI
 
 A fully responsive, visually immersive front-end e-commerce website for an Egyptian flower and plant store.
 
@@ -104,7 +104,7 @@ Nabatk/
 ---
 
 ## 📸 Screenshots
-
+![Nabatk Screenshot](nabatk/images/Screenshot 2026-04-08 162824.png)
 ### 🏠 Landing Page
 
 ![Landing](https://source.unsplash.com/800x500/?plants,website)
